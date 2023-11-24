@@ -10,6 +10,7 @@ And User click email and enter "<Email>"
 And User click phonenumber and enter the value "<PhoneNum>"
 Then User validate the page title is "Register"
 
+
 Examples:
 | FirstName     | LastName     | Address     | Email         | PhoneNum |
 | TestFirstName | TestLastname | TestAddress | abc@gmail.com | 124555   |

@@ -1,12 +1,15 @@
 package com.bdd.stepdefinition;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Registrationn extends TestExecutor{
 
@@ -14,9 +17,11 @@ public class Registrationn extends TestExecutor{
 	@Given("User launches chrome browser and opens the URL {string}")
 	public void user_launches_chrome_browser_and_opens_the_URL(String url) {
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Karen Amy\\eclipse-workspace\\AprilWeekEndSelenium\\exe\\chromedriver.exe");
+	//	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Karen Amy\\eclipse-workspace\\AprilWeekEndSelenium\\exe\\chromedriver.exe");
 		
-		driver = new ChromeDriver();
+		ChromeOptions chromeOptions = new ChromeOptions();
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver(chromeOptions);
 		
 		driver.manage().window().maximize();
 		

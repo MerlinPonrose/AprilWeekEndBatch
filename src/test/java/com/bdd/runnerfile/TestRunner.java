@@ -6,11 +6,11 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="C:\\neworkspace\\AprilWeekendBDD\\src\\test\\java\\com\\bdd\\feature",
+@CucumberOptions(features="C:\\neworkspace\\AprilWeekendBDD\\src\\test\\java\\com\\bdd\\feature\\test.feature",
 				 glue="com.bdd.stepdefinition",
 				 plugin= {"pretty","html:cucumberreport"},
 				 monochrome=true,// to view console information in readable format
-				 dryRun=true)// to check the unimplemented steps before execution
+				 dryRun=false)// to check the unimplemented steps before execution
 public class TestRunner {
 	
 	//tags= {"~@Regression"})

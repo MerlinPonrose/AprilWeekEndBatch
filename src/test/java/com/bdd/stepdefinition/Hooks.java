@@ -1,9 +1,12 @@
 package com.bdd.stepdefinition;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Hooks extends TestExecutor{
 	
@@ -11,11 +14,8 @@ public class Hooks extends TestExecutor{
 	@Before(order=1)
 	public void precondition1()
 	{
-		System.out.println("Precondition 1");
-	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Karen Amy\\eclipse-workspace\\AprilWeekEndSelenium\\exe\\chromedriver.exe");
-		
+		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
-		
 		driver.manage().window().maximize();
 		
 		driver.get("https://demo.automationtesting.in/Register.html"); // to open URL
@@ -32,7 +32,7 @@ public class Hooks extends TestExecutor{
 	public void postcondition1()
 	{
 		System.out.println("post condition 1");
-		driver.quit();
+	//	driver.quit();
 	}
 	
 	@After(order=2)

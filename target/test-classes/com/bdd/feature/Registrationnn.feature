@@ -16,5 +16,4 @@ And User click phonenumber and enter the value "124555"
 Scenario: Validate RadioButton
 When User clicks the Female radio button
 Then User validates radio button is selected
-And user validates the new validation
 
